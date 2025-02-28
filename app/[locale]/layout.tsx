@@ -1,55 +1,45 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Cairo } from "next/font/google"
-import { notFound } from "next/navigation"
-import { NextIntlClientProvider } from "next-intl"
-import { getTranslations } from "next-intl/server"
+import type { Metadata } from 'next'
+import '../globals.css'
+import { Providers } from '../providers'
+import { Cairo } from 'next/font/google'
 
-const inter = Cairo({ subsets: ["latin" , "arabic"] })
+const cairo = Cairo({ 
+  subsets: ['arabic'],
+  display: 'swap',
+  adjustFontFallback: false // this helps with Arabic text rendering
+})
 
 export const metadata: Metadata = {
-  title: "Product Scraper",
-  description: "Scrape product data from websites",
+  title: 'محلي API',
+  description: 'أداة تحليل وجمع بيانات المنتجات',
+  generator: 'Next.js',
 }
 
-export function generateStaticParams() {
-  return [{ locale: "en" }, { locale: "ar" }]
+async function getMessages(locale: string) {
+  try {
+    return (await import(`@/messages/${locale}.json`)).default;
+  } catch (error) {
+    return (await import(`@/messages/ar.json`)).default;
+  }
 }
 
 export default async function RootLayout({
   children,
-  params: { locale },
+  params: { locale }
 }: {
-  children: React.ReactNode
-  params: { locale: string }
+  children: React.ReactNode;
+  params: { locale: string };
 }) {
-  let messages
-  try {
-    messages = (await import(`../../messages/${locale}.json`)).default
-  } catch (error) {
-    notFound()
-  }
+  const messages = await getMessages(locale);
 
   return (
-    <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
-      <body className={inter.className}>
-        <NextIntlClientProvider locale={locale} messages={messages}>
+    <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'} className={cairo.className}>
+      <body>
+        <Providers messages={messages} locale={locale}>
           {children}
-        </NextIntlClientProvider>
+        </Providers>
       </body>
     </html>
   )
-}
-
-export async function generateMetadata({
-  params: { locale },
-}: {
-  params: { locale: string }
-}) {
-  const t = await getTranslations({ locale, namespace: "Index" })
-
-  return {
-    title: t("title"),
-  }
 }
 

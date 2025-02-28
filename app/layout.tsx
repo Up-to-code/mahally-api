@@ -4,8 +4,8 @@ import { Providers } from './providers'
 import { getTranslations } from 'next-intl/server'
 
 export const metadata: Metadata = {
-  title: 'Mahally API',
-  description: 'Product scraping and analysis tool',
+  title: 'محلي API',
+  description: 'أداة تحليل وجمع بيانات المنتجات',
   generator: 'Next.js',
 }
 
