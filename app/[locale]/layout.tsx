@@ -4,9 +4,10 @@ import { Providers } from '../providers'
 import { Cairo } from 'next/font/google'
 
 const cairo = Cairo({ 
-  subsets: ['arabic'],
+  subsets: ['arabic', 'latin'],
+  variable: '--font-cairo',
   display: 'swap',
-  adjustFontFallback: false // this helps with Arabic text rendering
+  adjustFontFallback: false
 })
 
 export const metadata: Metadata = {
@@ -33,8 +34,8 @@ export default async function RootLayout({
   const messages = await getMessages(locale);
 
   return (
-    <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'} className={cairo.className}>
-      <body>
+    <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'} className={`${cairo.variable}`}>
+      <body className={`font-sans`}>
         <Providers messages={messages} locale={locale}>
           {children}
         </Providers>
