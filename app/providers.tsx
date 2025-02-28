@@ -12,7 +12,13 @@ export function Providers({
   locale: string;
 }) {
   return (
-    <NextIntlClientProvider messages={messages} locale={locale}>
+    <NextIntlClientProvider 
+      messages={messages} 
+      locale={locale}
+      timeZone="Asia/Dubai"
+      // You can also use Intl.DateTimeFormat().resolvedOptions().timeZone
+      // to get the user's local timezone
+    >
       {children}
     </NextIntlClientProvider>
   );
