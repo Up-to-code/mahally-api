@@ -4,9 +4,9 @@ import { Providers } from './providers'
 import { getTranslations } from 'next-intl/server'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.dev',
+  title: 'Mahally API',
+  description: 'Product scraping and analysis tool',
+  generator: 'Next.js',
 }
 
 async function getMessages(locale: string) {
