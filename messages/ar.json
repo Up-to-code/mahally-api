@@ -1,0 +1,19 @@
+{
+  "Index": {
+    "title": "مستخرج المنتجات",
+    "urlPlaceholder": "أدخل رابط الموقع",
+    "scrapeAllPages": "استخراج جميع الصفحات",
+    "scrapeButton": "استخراج المنتجات",
+    "loading": "جاري التحميل...",
+    "results": "النتائج",
+    "totalPages": "إجمالي الصفحات",
+    "notAvailable": "غير متاح",
+    "downloadExcel": "تنزيل ملف Excel",
+    "urlError": "الرجاء إدخال رابط",
+    "fetchError": "فشل في جلب البيانات",
+    "genericError": "حدث خطأ",
+    "excelError": "فشل في إنشاء ملف Excel",
+    "downloadError": "فشل في تنزيل ملف Excel"
+  }
+}
+

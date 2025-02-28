@@ -1,0 +1,19 @@
+{
+  "Index": {
+    "title": "Product Scraper",
+    "urlPlaceholder": "Enter website URL",
+    "scrapeAllPages": "Scrape all pages",
+    "scrapeButton": "Scrape Products",
+    "loading": "Loading...",
+    "results": "Results",
+    "totalPages": "Total Pages",
+    "notAvailable": "N/A",
+    "downloadExcel": "Download Excel",
+    "urlError": "Please enter a URL",
+    "fetchError": "Failed to fetch data",
+    "genericError": "An error occurred",
+    "excelError": "Failed to generate Excel file",
+    "downloadError": "Failed to download Excel file"
+  }
+}
+
