@@ -1,12 +1,20 @@
 import * as XLSX from "xlsx"
 
+// Define interface for the expected data structure
+interface ProductData {
+  title: string[];
+  prices: (string | number)[];
+  stars: (string | number)[];
+  image: string[];
+}
+
 export async function POST(request: Request) {
   try {
-    const data = await request.json()
+    const data: ProductData = await request.json()
 
     // Create a worksheet from the data
     const worksheet = XLSX.utils.json_to_sheet(
-      data.title.map((title, index) => ({
+      data.title.map((title: string, index: number) => ({
         Title: title,
         Price: data.prices[index] || "N/A",
         Rating: data.stars[index] || "N/A",
@@ -46,4 +54,3 @@ export async function POST(request: Request) {
     })
   }
 }
-
