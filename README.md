@@ -20,4 +20,8 @@ It efficiently scrapes product details, including names, prices, images, and des
 - 🛒 **Automating product data collection**  
 - 🔄 **E-commerce data migration and analysis**  
 
-Would you like to add specific functionalities like pagination handling or data export options? 🚀  
+Would you like to add specific functionalities like pagination handling or data export options? 🚀
+
+## Project links
+
+[Source](https://github.com/Up-to-code/mahally-api) · [Issues](https://github.com/Up-to-code/mahally-api/issues) · [Public project directory](https://github.com/qentrah/.github/blob/main/profile/PROJECTS.md)
